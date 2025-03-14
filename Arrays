@@ -1,0 +1,37 @@
+package academy.devdojo.maratonajava.introducao;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class aula4Udemy {
+    public static void main(String[] args) {
+        String[] frutas = { "1 - Manga", "2 - Uva", "3 - Mamão", "4 - Goiaba", "5 - Jaca", "6 - Melão", "7 - Abacate",
+        "8 - Laranja", "9 - Caja", "10 - Acerola"};
+        //Exibir as opçoes
+        System.out.println(Arrays.toString(frutas)); //para as opções aparecer certo
+        System.out.println("Qual fruta você deseja? ");
+
+        //Pergunta qual seria a opção
+        Scanner valor = new Scanner(System.in);
+        System.out.print("Digite o nº correspondente: ");
+
+        //lê o numero digitado
+        int numeroEscolhido = valor.nextInt();
+
+        //Verificar e imprimir a fruta correspondente
+        boolean encontrado = false;
+        for (String fruta : frutas) {
+            if (fruta.startsWith(numeroEscolhido + " -")) {
+                System.out.println("Você escolheu: " + fruta);
+                encontrado = true;
+                break; // Se verdadeiro, o "breack" para de rodar o código.
+            }
+
+        }
+
+        if (!encontrado) {
+            System.out.println("Número inválido! Escolha um número da lista.");
+        }
+
+    }
+}
